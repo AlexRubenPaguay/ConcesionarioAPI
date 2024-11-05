@@ -33,7 +33,11 @@ Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes p
 ## Base de datos H2
    La base de datos H2 estará en memoria, por lo que los datos se perderán cuando se cierre la aplicación.
    Para acceder a la consola web de H2 y explorar la base de datos, puedes visitar: **http://localhost:8080/h2-console**
+   User Name: sa
+   Password: 
+   ![image](https://github.com/user-attachments/assets/eddf779a-d3c8-41ca-800c-84bcedf0db5a)
    Nota: Asegúrate de que el JDBC URL sea **jdbc:h2:mem:concesionario** para conectarte correctamente a la base de datos en memoria.
+   Ejecutar el archivo:  concesionarioBD.sql para cargar los datos.
 
 ## Dependencias (pom.xml)
 Este proyecto utiliza Maven para la gestión de dependencias. El archivo pom.xml incluye todas las dependencias para que el proyecto se ejecute correctmente.
