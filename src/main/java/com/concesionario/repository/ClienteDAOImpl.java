@@ -21,8 +21,6 @@ public class ClienteDAOImpl implements IClienteDAO {
         String clienteJPQL = "SELECT c " +
                 "FROM Cliente c " +
                 "JOIN FETCH c.vehiculos v " +
-                //  "JOIN FETCH v.modelo mo " +
-                // "JOIN FETCH mo.marca ma " +
                 "WHERE c.identificacion = :identificacion";
         TypedQuery<Cliente> clienteExistente = em.createQuery(clienteJPQL, Cliente.class);
         clienteExistente.setParameter("identificacion", identificacion);
