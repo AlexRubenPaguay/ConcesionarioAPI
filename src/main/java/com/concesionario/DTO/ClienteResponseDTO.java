@@ -1,6 +1,5 @@
 package com.concesionario.DTO;
 
-import com.concesionario.domain.Vehiculos;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,14 +11,14 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteDTO {
-
-    private Integer id;
+public class ClienteResponseDTO {
+    private Long id;
     private String identificacion;
     private String nombres;
     private String apellidos;
+    private String nombreCorto;
     private String direccion;
     private String correo;
     private String telefono;
-    private List<Vehiculos> vehiculos;
+    private List<VehiculoResponseDTO> vehiculos;
 }
