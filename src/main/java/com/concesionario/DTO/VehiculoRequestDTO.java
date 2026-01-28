@@ -1,7 +1,5 @@
 package com.concesionario.DTO;
 
-import com.concesionario.domain.Marca;
-import com.concesionario.domain.Modelo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class VehiculoDTO {
+public class VehiculoRequestDTO {
     private String placa;
-    private Marca marca;
-    private Modelo modelo;
+    private Long marca;
+    private Long modelo;
     private String chasis;
 }

@@ -4,12 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
 @NotNull
 @NotEmpty
 @NotBlank
@@ -20,10 +18,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "modelo")
 public class Modelo {
     @Id
-    private Integer id;
-    @Column(unique = true)
+    private Long id;
+    @Column(unique = true, nullable = false)
     private String descripcion;
-    //@Column(name = "id_marca")
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(insertable = true, updatable = true, nullable = false)
     private Marca marca;

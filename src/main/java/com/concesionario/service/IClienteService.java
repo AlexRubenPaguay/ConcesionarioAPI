@@ -1,10 +1,11 @@
 package com.concesionario.service;
 
-import com.concesionario.DTO.ClienteDTO;
+import com.concesionario.DTO.ClienteResponseDTO;
+import com.concesionario.DTO.ClienteRequestDTO;
 
 public interface IClienteService {
-    ClienteDTO save(ClienteDTO cliente);
+    String save(ClienteRequestDTO clienteRequestDTO);
 
-    ClienteDTO find(String identificacion);
+    ClienteResponseDTO find(String identificacion);
 
 }

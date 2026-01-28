@@ -1,6 +1,7 @@
 package com.concesionario.controller;
 
-import com.concesionario.DTO.ClienteDTO;
+import com.concesionario.DTO.ClienteResponseDTO;
+import com.concesionario.DTO.ClienteRequestDTO;
 import com.concesionario.service.IClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,13 @@ public class ClienteController {
     private IClienteService clienteService;
 
     @PostMapping("/save")
-    public ResponseEntity<ClienteDTO> save(@Valid @RequestBody ClienteDTO clienteDTO) {
-        return new ResponseEntity<>(this.clienteService.save(clienteDTO), HttpStatus.CREATED);
+    public ResponseEntity<String> save(@Valid @RequestBody ClienteRequestDTO clienteRequestDTO) {
+        return new ResponseEntity<>(this.clienteService.save(clienteRequestDTO), HttpStatus.CREATED);
     }
 
     @GetMapping("/find/{identificacion}")
-    public ResponseEntity<ClienteDTO> find(@Valid @PathVariable String identificacion) {
-        ClienteDTO clienteDTO = this.clienteService.find(identificacion);
-        return new ResponseEntity<>(clienteDTO, HttpStatus.OK);
+    public ResponseEntity<ClienteResponseDTO> find(@Valid @PathVariable String identificacion) {
+        ClienteResponseDTO clienteResponseDTO = this.clienteService.find(identificacion);
+        return new ResponseEntity<>(clienteResponseDTO, HttpStatus.OK);
     }
 }
